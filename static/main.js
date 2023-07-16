@@ -38,7 +38,9 @@ onCanMove: null,
 onCanMoveTo: null,
 onLoadFailed: null,
 onDragMove: null,
-onDragStop: null,
+onDragStop: function handleStop(node, e) {
+    $('#data').append($('#myTree').tree('toJson'));
+},
 onLoading: null,
 
 // The position of the toggle button
