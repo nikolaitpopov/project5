@@ -2,7 +2,7 @@ from django.db import models
 from users.models import User
 
 # Create your models here.
-class page(models.Model):
+class page (models.Model):
     title = models.CharField(max_length=255)
     content = models.TextField(blank=True)
     time_create = models.DateTimeField(auto_now_add=True)
