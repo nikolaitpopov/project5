@@ -16,5 +16,5 @@ class paragraph(models.Model):
     content = models.TextField(blank=True)
     time_create = models.DateTimeField(auto_now_add=True)
     time_update = models.DateTimeField(auto_now=True)
-    parent = models.ForeignKey('self',on_delete=models.SET_NULL, null=True)
+    parent = models.ForeignKey('self',on_delete=models.SET_NULL, null=True,default=0, blank=True)
     page = models.ForeignKey(page, on_delete=models.CASCADE, default=0)
