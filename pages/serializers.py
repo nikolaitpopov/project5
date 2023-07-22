@@ -1,13 +1,9 @@
 from rest_framework import serializers
 
-from pages.models import page, paragraph
+from pages.models import page
 
 
 class pagesSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = page
-        fields = ['title', 'content', 'owner', 'id']
-class paragraphSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = paragraph
-        fields = ['content', 'page', 'parent', 'id']
+        fields = ['title', 'content']
