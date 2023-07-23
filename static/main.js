@@ -99,5 +99,38 @@ require([ 'dgrid/Grid', 'dojo/domReady!' ], function (Grid) {
     }, 'grid');
     grid.renderArray(grid_data);
 });
+
+require(["dojo/on", "dgrid/OnDemandGrid","dgrid/Tree","dgrid/Editor", "dgrid/Keyboard",
+					"dgrid/Selection", "dgrid/Selector", "dgrid/ColumnSet", "dojo/_base/declare",
+					"aux_/createHierarchicalStore", "aux_/hierarchicalCountryData", "dojo/domReady!"],
+				function(
+					on, Grid, Tree, Editor, Keyboard, Selection, Selector, ColumnSet, declare,
+					createHierarchicalStore, hierarchicalCountryData){
+					var count = 0; // for incrementing edits from button under 1st grid
+
+					function byId(id){
+						return document.getElementById(id);
+					}
+
+					function nbspFormatter(value){
+						// returns "&nbsp;" for blank content, to prevent cell collapsing
+						return value === undefined || value === "" ? "&nbsp;" : value;
+					}
+
+					var StandardGrid = declare([Grid, Keyboard, Selection, Selector, Editor, Tree]);
+					var testCountryStore = createHierarchicalStore({ data: hierarchicalCountryData }, true);
+
+					var treeGrid = window.treeGrid = new StandardGrid({
+						collection: testCountryStore,
+						columns: [
+							{renderExpando: true, label: "Name", field:"name", sortable: false},
+							{label: "Visited", field: "bool", sortable: false, editor: "checkbox"},
+							{label:"Type", field:"type", sortable: false},
+							{label:"Population", field:"population"},
+							{label:"Timezone", field:"timezone"}
+						]
+					}, "treeGrid");
+
+});
 });
 
