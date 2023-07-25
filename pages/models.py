@@ -18,3 +18,6 @@ class paragraph(models.Model):
     time_update = models.DateTimeField(auto_now=True)
     parent = models.ForeignKey('self',on_delete=models.SET_NULL, null=True,default=0, blank=True)
     page = models.ForeignKey(page, on_delete=models.CASCADE, default=0)
+
+    def __str__(self):
+        return str(self.id);

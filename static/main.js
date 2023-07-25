@@ -189,10 +189,10 @@ startDndDelay: 300
 
 				function getColumns() {
 					return [
-						{ label: 'Name', field: 'name', sortable: false, renderExpando: true },
+						{ label: 'Content', field: 'content', sortable: false, renderExpando: true },
 						{ label: 'Id', field: 'id' },
-						{ label: 'Comment', field: 'comment', sortable: false, editor: "text" },
-						{ label: 'Boolean', field: 'boo', sortable: false, autoSave: true, editor: "checkbox" }
+						{ label: 'Parent', field: 'parent', sortable: false, editor: "text" },
+//						{ label: 'Boolean', field: 'boo', sortable: false, autoSave: true, editor: "checkbox" }
 					];
 				}
 
