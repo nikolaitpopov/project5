@@ -1,4 +1,5 @@
 .idea/
 static/components/jqTree-master/
 static/components/node_modules/
+!static/components/node_modules/aux_/
 db.sqlite3
