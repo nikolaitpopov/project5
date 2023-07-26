@@ -181,7 +181,7 @@ startDndDelay: 300
 					}, config));
 
 					store.getRootCollection = function () {
-						return this.root.filter({ parent: undefined });
+						return this.root.filter({ id: undefined });
 					};
 
 					return store;
