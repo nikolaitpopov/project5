@@ -1,0 +1,22 @@
+.wrapper{
+    margin: 0 auto;
+}
+.header{
+    background: #009e9d;
+    padding: 50px 0;
+    font-size: 20px;
+    line-height: 24px;
+
+}
+.left-sidebar{
+    background: #0010d5;
+    float: left;
+    width: 25%;
+
+}
+.content{
+    background: #97969b;
+    width: 75%;
+    float: left;
+
+}
